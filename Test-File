@@ -1,1 +1,35 @@
-Hello
+USE criptomarket
+create table [ClassinPapka]
+(
+	[Name] nvarchar(100) not null,
+	[Id] int not null primary key,
+	[CreatedOn] datetime not null,
+	[UpdatedOn] datetime,
+	[DeletedOn] datetime,
+	[IsDeleted] bit,
+	[Wallet] decimal not null,
+);
+create table [Transaction]
+(
+	[Id] int not null primary key,
+	[CreateOn] datetime not null,
+	[NameCryptoId] int not null,
+	[Cost] decimal not null,
+);
+create table [InfoAboutCrypto]
+(
+	[CryptoId] int not null,
+	[Costs] decimal not null,
+	[PriceDogeCoin] decimal not null,
+	[PriceVetchain] decimal not null,
+	[PatternDogeCoin] decimal not null,
+	[PatternVetchain] decimal not null,
+);
+create table [Wallets]
+(
+	[ClientId] int not null,
+	[WalletMoney] decimal not null,
+	[CryptoAmount] decimal,
+	[MoneyForCripto] decimal,
+);
+
